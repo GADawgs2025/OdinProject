@@ -46,7 +46,7 @@ body{
   align-items: center;
   background: rgba(0, 0, 0, 0.6); /* Optional: Dark tint to make text readable */
   color: white;
-  padding: 2em;
+  padding: 2em 0; /* Top/Bottom = 1em | Left/Right = 0 */
 }
 .odin-image{
   width: 80px;
@@ -55,11 +55,49 @@ body{
 
 .image-title p{
     font-family: 'Norsebold', sans-serif;
-    font-size:56px;
+    font-size:84px;
 }
 
 /* Right Side: */
 .right-container{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    gap:4em;
+    padding: 60px 30px;
+}
+
+.right-text{
+    ]
+}
+
+.flex-form{
+    display: flex !important;  /* Overrides any default 'display: block' */
+    flex-wrap: wrap !important;
+    gap: 16px;             /* Adds spacing between both rows and columns */
+    width: auto;
+    justify-content: flex-start; 
+}
+
+.flex-form > h2{
+    flex:1 1 100%;
+    margin: 0 0 8px 0;    /* Adds space below the title */
+    font-size: 0.9rem;
+}
+
+.form-box{
+    display: flex;
+    flex-direction: column;
+    gap: 4px; /* Adds a small space between index, label, and input */
+    flex: 1 1 250px; 
+    align-items: flex-start;
+}
+
+.form-box > label{
+    font-size: 0.6rem;
+}
+
+.form-box > input{
+    width: 80%;            /* Forces the input to stretch to the container's width */
+    box-sizing: border-box; /* Ensures padding & borders don't make it spill out */
 }
