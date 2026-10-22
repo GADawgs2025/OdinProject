@@ -87,7 +87,7 @@ body{
 .flex-form > h2{
     flex:1 1 100%;
     margin: 0 0 8px 0;    /* Adds space below the title */
-    font-size: 0.9rem;
+    font-size: 1.2rem;
 }
 
 .form-box{
@@ -103,7 +103,7 @@ body{
 }
 
 .form-box > label{
-    font-size: 0.75rem;
+    font-size: 0.65rem;
 }
 
 .form-box > input{
@@ -130,7 +130,15 @@ body{
     font-weight:bold;
     cursor: pointer;           /* Changes cursor to a hand on hover */
     transition: background-color 0.2s ease; /* Smooth hover transition */
-    
+}
+.right-button > .log-in-para{
+    padding-top: 1em;
+    font-size: .8em;
+}
+.right-button > .log-in-para > a{
+    color:#596D48;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .right-button > .create-account-btn:hover {
