@@ -3,6 +3,7 @@
   src: url('Norsebold.otf') format('opentype');
 }
 
+
 *{
     margin:0;
     padding:0;
@@ -64,11 +65,14 @@ body{
     flex-direction: column;
     justify-content: center;
     gap:4em;
-    padding: 60px 30px;
+    padding: 60px 60px;
+    font-family: "Roboto", sans-serif;
 }
 
 .right-text{
-    ]
+    font-family: "Libre Baskerville", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .flex-form{
@@ -77,6 +81,7 @@ body{
     gap: 16px;             /* Adds spacing between both rows and columns */
     width: auto;
     justify-content: flex-start; 
+    
 }
 
 .flex-form > h2{
@@ -88,16 +93,54 @@ body{
 .form-box{
     display: flex;
     flex-direction: column;
-    gap: 4px; /* Adds a small space between index, label, and input */
-    flex: 1 1 250px; 
+    gap: 2px; /* Adds a small space between index, label, and input */ 
     align-items: flex-start;
+    box-sizing: border-box;
+
+    /* --- MOBILE DEFAULT: 2 Columns --- */
+    /* 50% width minus half of the 16px gap to prevent wrapping early */
+    flex: 0 0 calc(50% - 8px); 
 }
 
 .form-box > label{
-    font-size: 0.6rem;
+    font-size: 0.75rem;
 }
 
 .form-box > input{
     width: 80%;            /* Forces the input to stretch to the container's width */
     box-sizing: border-box; /* Ensures padding & borders don't make it spill out */
+    border: 2px solid #e5e7eb;
+    border-radius: 4px;
+    padding:8px;
+}
+
+.form-box > input:user-valid {
+  border-color: green;
+}
+.form-box > input:user-invalid {
+  border-color: red;
+}
+
+.right-button > .create-account-btn{
+    padding: 12px;
+    background-color: #596D48;
+    border-radius: 4px;
+    color: white; 
+    font-size: 0.9rem;
+    font-weight:bold;
+    cursor: pointer;           /* Changes cursor to a hand on hover */
+    transition: background-color 0.2s ease; /* Smooth hover transition */
+    
+}
+
+.right-button > .create-account-btn:hover {
+    background-color: #455437;
+}
+
+/* --- DESKTOP STYLES: 3 Columns --- */
+@media (min-width:768px){
+    .form-box{
+        /* 33.33% width minus two-thirds of the gap to keep 3 items per row */
+        flex: 0 0 calc(33.33% - 11px) !important; 
+    }
 }
